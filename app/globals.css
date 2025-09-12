@@ -1,26 +1,66 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');@import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--background: #ddd;
+	--foreground: #333;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #333;
+		--foreground: #ddd;
+	}
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+}
+
+@font-face {
+	font-family: neallogo;
+	src: url(nealfunfont.ttf);
+}
+
+
+#title {
+	text-align: center;
+	font-weight: normal;
+	font-family: neallogo;
+	font-size: 500%;
+	margin: 0;
+}
+
+#subtitle {
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	font-weight: 400;
+}
+
+#pages {
+	text-align: center;
+	border: 5px solid black;
+	margin: 2vh 9.5vw 2vh 9.5vw;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.page {
+	margin: 1.3vw;
+	width: 24vw;
+	height: 9vw;
+	display: inline-block;
+	padding: 0;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+
+.page img {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	box-sizing: border-box;
+	border-radius: 20px;
 }
