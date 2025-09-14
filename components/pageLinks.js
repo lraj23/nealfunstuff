@@ -3,7 +3,7 @@ function pageLink({ link, image }) {
 		<div className="page">
 			<a href={link}><img src={image} /></a>
 		</div>
-	)
+	);
 }
 
 export default pageLink;

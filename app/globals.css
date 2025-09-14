@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import "tailwindcss";
 
 :root {
 	--background: #ddd;
+	--background-darker: #bbb;
 	--foreground: #333;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background: #333;
+		--background-darker: #222;
 		--foreground: #ddd;
 	}
 }
@@ -39,12 +42,15 @@ body {
 	font-weight: 400;
 }
 
+#pages,
+#progressContainer {
+	margin: 2vh 9.5vw 2vh 9.5vw;
+	box-sizing: border-box;
+}
+
 #pages {
 	text-align: center;
-	border: 5px solid black;
-	margin: 2vh 9.5vw 2vh 9.5vw;
 	padding: 0;
-	box-sizing: border-box;
 }
 
 .page {
@@ -63,4 +69,36 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	border-radius: 20px;
+}
+
+#progressContainer {
+	padding: 2vw;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.progressItem {
+	margin: 2vh;
+}
+
+.progressItemName {
+	display: inline-block;
+	width: 50%;
+}
+
+.progressItemTimeLeft {
+	display: inline-block;
+	width: 50%;
+	text-align: right;
+}
+
+.progressItemSlider {
+	background-color: var(--background-darker);
+	height: 4vh;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.progressItemSliderProgress {
+	background-color: #0a0;
+	height: 4vh;
 }
