@@ -1,13 +1,11 @@
 'use client';
-import React, { useEffect } from "react";
+import PageTitle from "@/components/pageTitle";
 import PageLink from "@/components/pageLinks";
 
 export default function Home() {
-	useEffect(() => {
-		document.title = "NealFunStuff";
-	}, [document.title]);
 	return (
 		<>
+			<PageTitle title="NealFunStuff" />
 			<h1 id="title">NEAL.FUN Stuff</h1>
 			<p id="subtitle">a tiny variation of <a href="https://neal.fun/">neal.fun</a><br />All these stolen images ARE credited to neal.fun! I'll make my own eventually.</p>
 			<div id="pages">

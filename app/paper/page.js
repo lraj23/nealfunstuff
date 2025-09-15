@@ -1,11 +1,11 @@
 'use client';
-import React, {useEffect} from "react";
+import PageTitle from "@/components/pageTitle";
 
-export default function Home () {
-	useEffect(() => {
-		document.title = "Coming Soon - NealFunStuff";
-	}, [document.title]);
+export default function Home() {
 	return (
-		<h1 id="title">Coming soon!</h1>
+		<>
+			<PageTitle title="Coming Soon - NealFunStuff" />
+			<h1 id="title">Coming soon!</h1>
+		</>
 	)
 }

@@ -1,5 +1,4 @@
 'use client';
-import { Akaya_Kanadaka } from "next/font/google";
 import React, { useEffect, useRef, useState } from "react";
 
 const msInSec = 1000;
@@ -89,9 +88,6 @@ function progressItem({ func }) {
 		animationFrameId.current = requestAnimationFrame(update);
 		return () => cancelAnimationFrame(animationFrameId.current);
 	}, []);
-	useEffect(() => {
-		document.title = "Progress - NealFunStuff";
-	}, [document.title]);
 	const item = funcs[func];
 	return (
 		<div className="progressItem">
