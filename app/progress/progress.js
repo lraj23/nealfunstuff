@@ -1,22 +1,20 @@
 'use client';
-import PageTitle from "@/components/pageTitle";
 import React, { useEffect, useRef, useState } from "react";
 import ProgressItem from "@/components/progressItems";
 
-export default function Home() {
+export default _ => {
 	const [time, setTime] = useState(Date.now());
 	const animationFrameId = useRef();
-	const update = () => {
+	const update = _ => {
 		setTime(Date.now());
 		animationFrameId.current = requestAnimationFrame(update);
 	};
-	useEffect(() => {
+	useEffect(_ => {
 		animationFrameId.current = requestAnimationFrame(update);
-		return () => cancelAnimationFrame(animationFrameId.current);
+		return _ => cancelAnimationFrame(animationFrameId.current);
 	});
 	return (
 		<>
-			<PageTitle title="Progress - NealFunStuff" />
 			<h1 id="title">Progress</h1>
 			<p id="subtitle">Count your days! (ummm... I mean measure how much time is left 😅)<br />a tiny variation of <a href="https://neal.fun/progress/">neal.fun/progress/</a></p>
 			<div id="progressContainer">
