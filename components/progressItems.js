@@ -1,6 +1,3 @@
-'use client';
-import React, { useEffect, useRef, useState } from "react";
-
 const msInSec = 1000;
 const msInMin = 60 * msInSec;
 const offset = _ => new Date().getTimezoneOffset() * msInMin;
@@ -35,8 +32,8 @@ const funcs = [
 	{
 		itemName: "🐧 Olive reviews my project from Siege Prep Week 1",
 		updateRate: 1,
-		totalTime: _ => 13 * 7 * msInDay,
-		determineTime: time => new Date(new Date(2025, 11, 1).getTime() + msInMin * 240 - offset()) - time
+		totalTime: _ => 14 * 7 * msInDay,
+		determineTime: time => new Date(new Date(2025, 11, 8).getTime() + (msInMin * 180) - offset()) - time
 	},
 	{
 		itemName: "🎊 Next year",
@@ -77,23 +74,8 @@ const funcs = [
 ];
 const msToString = ms => (ms < msInSec ? ms + " millisecond" + (ms < 2 ? "" : "s") : (ms < msInMin ? Math.floor(ms / msInSec) + " second" + (ms < 2 * msInSec ? "" : "s") : (ms < msInHr ? Math.floor(ms / msInMin) + " minute" + (ms < 2 * msInMin ? "" : "s") : (ms < msInDay ? Math.floor(ms / msInHr) + " hour" + (ms < 2 * msInHr ? "" : "s") : (ms < msInYr(0) ? Math.floor(ms / msInDay) + " day" + (ms < 2 * msInDay ? "" : "s") : Math.floor(ms / msInYr(0)) + " year" + (ms < 2 * msInYr(0) ? "" : "s"))))));
 
-export default ({ func }) => {
-	const [time, setTime] = useState(Date.now());
-	const animationFrameId = useRef();
-	const update = _ => {
-		setTime(Date.now());
-		animationFrameId.current = requestAnimationFrame(update);
-	};
-	useEffect(_ => {
-		animationFrameId.current = requestAnimationFrame(update);
-		return _ => cancelAnimationFrame(animationFrameId.current);
-	}, []);
-	const item = funcs[func];
-	return (
-		<div className="progressItem">
-			<p className="progressItemName">{item.itemName}</p>
-			<p className="progressItemTimeLeft">{msToString(item.determineTime(time))}</p>
-			<div className="progressItemSlider"><div className="progressItemSliderProgress" style={{ width: 100 - item.determineTime(time) / item.totalTime() * 100 + "%" }}></div></div>
-		</div>
-	);
-};
+export default ({ func }) => <div className="progressItem">
+	<p className="progressItemName">{funcs[func].itemName}</p>
+	<p className="progressItemTimeLeft">{msToString(funcs[func].determineTime(Date.now()))}</p>
+	<div className="progressItemSlider"><div className="progressItemSliderProgress" style={{ width: 100 - funcs[func].determineTime(Date.now()) / funcs[func].totalTime() * 100 + "%" }}></div></div>
+</div>;
