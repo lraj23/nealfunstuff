@@ -1,2 +1,5 @@
-export const metadata = { title: "Coming Soon - NealFunStuff" };
-export default _ => <h1 id="title">Coming soon!</h1>;
+import Paper from "@/app/paper/paper";
+
+export const metadata = { title: "Paper - NealFunStuff" };
+
+export default _ => <Paper />;

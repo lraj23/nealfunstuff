@@ -46,12 +46,14 @@ a {
 }
 
 #pages,
-#progressContainer {
+#progressContainer,
+#paperContainer {
 	margin: 2vh 9.5vw 2vh 9.5vw;
 	box-sizing: border-box;
 }
 
-#pages {
+#pages,
+#paperContainer {
 	text-align: center;
 	padding: 0;
 }
@@ -104,4 +106,30 @@ a {
 .progressItemSliderProgress {
 	background-color: #0a0;
 	height: 4vh;
+}
+
+#paperFolds {
+	font-weight: bold;
+	font-size: 4vh;
+	margin: 0;
+}
+
+#paperImg {
+	height: 50vh;
+}
+
+#paperUnfold,
+#paperFold {
+	font-size: 2vh;
+	margin: 0.5vw;
+	font-family: 'Roboto Condensed';
+	border: none;
+}
+
+#paperUnfold {
+	background-color: #f66;
+}
+
+#paperFold {
+	background-color: #6f6;
 }
