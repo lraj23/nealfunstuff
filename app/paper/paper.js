@@ -1,5 +1,7 @@
 'use client';
 import React, { useEffect, useState } from "react";
+import ReturnHome from "@/components/returnHome";
+import SubAndTitle from "@/components/subAndTitle";
 
 const mmInCm = 10;
 const mmInM = 100 * mmInCm;
@@ -101,8 +103,8 @@ export default _ => {
 	const changeFolds = dir => setFolds(folds + dir);
 	return (
 		<>
-			<h1 id="title">Paper</h1>
-			<p id="subtitle">See how it all stacks up... like how far you can fold<br />a tiny variation of <a href="https://neal.fun/paper/">neal.fun/paper/</a><br />Yes, I stole his images AGAIN. I'll eventually get new images for everything, probably...</p>
+			<ReturnHome />
+			<SubAndTitle title="Paper">See how it all stacks up... like how far you can fold<br />a tiny variation of <a href="https://neal.fun/paper/">neal.fun/paper/</a><br />Yes, I stole his images AGAIN. I'll eventually get new images for everything, probably...</SubAndTitle>
 			<div id="paperContainer">
 				<p id="paperFolds">{folds} Fold{folds === 1 ? "" : "s"}</p>
 				<img id="paperImg" src={"https://neal.fun/paper/" + imgUrls[folds]} />

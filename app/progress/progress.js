@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect, useRef, useState } from "react";
 import ProgressItem from "@/components/progressItems";
+import ReturnHome from "@/components/returnHome";
+import SubAndTitle from "@/components/subAndTitle";
 
 export default _ => {
 	const [time, setTime] = useState(Date.now());
@@ -15,8 +17,8 @@ export default _ => {
 	});
 	return (
 		<>
-			<h1 id="title">Progress</h1>
-			<p id="subtitle">Count your days! (ummm... I mean measure how much time is left 😅)<br />a tiny variation of <a href="https://neal.fun/progress/">neal.fun/progress/</a></p>
+			<ReturnHome />
+			<SubAndTitle title="Progress">Count your days (ummm... I mean measure how much time is left 😅)<br />a tiny variation of <a href="https://neal.fun/progress/">neal.fun/progress/</a></SubAndTitle>
 			<div id="progressContainer">
 				<ProgressItem func="0" />
 				<ProgressItem func="1" />

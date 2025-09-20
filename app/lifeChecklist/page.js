@@ -1,2 +1,4 @@
+import ReturnHome from "@/components/returnHome";
+import SubAndTitle from "@/components/subAndTitle";
 export const metadata = { title: "Coming Soon - NealFunStuff" };
-export default _ => <h1 id="title">Coming soon!</h1>;
+export default _ => <><ReturnHome /><SubAndTitle title="Coming soon!" /></>;

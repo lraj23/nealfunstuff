@@ -1,0 +1,1 @@
+export default ({ title, children }) => <><h1 id="title">{title}</h1><p id="subtitle">{children}</p></>;

@@ -1,10 +1,10 @@
 import PageLink from "@/components/pageLinks";
+import SubAndTitle from "@/components/subAndTitle";
 
 export const metadata = { title: "NealFunStuff" };
 
 export default _ => <>
-	<h1 id="title">NEAL.FUN Stuff</h1>
-	<p id="subtitle">a tiny variation of <a href="https://neal.fun/">neal.fun</a><br />All these stolen images ARE credited to neal.fun! I'll make my own eventually.</p>
+	<SubAndTitle title="NEAL.FUN Stuff">a tiny variation of <a href="https://neal.fun/">neal.fun</a><br />All these stolen images ARE credited to neal.fun! I'll make my own eventually.</SubAndTitle>
 	<div id="pages">
 		<PageLink link="./progress" image="./progress.png" />
 		<PageLink link="./paper" image="./paper.png" />

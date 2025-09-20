@@ -31,6 +31,13 @@ a {
 	color: var(--foreground);
 }
 
+#returnHome {
+	font-size: 250%;
+	font-family: neallogo;
+	margin: 1vw;
+	position: fixed;
+}
+
 #title {
 	text-align: center;
 	font-weight: normal;
