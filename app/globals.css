@@ -54,13 +54,17 @@ a {
 
 #pages,
 #progressContainer,
-#paperContainer {
+#paperContainer,
+#speedContainer {
+	padding: 2vw;
 	margin: 2vh 9.5vw 2vh 9.5vw;
 	box-sizing: border-box;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 #pages,
-#paperContainer {
+#paperContainer,
+#speedContainer {
 	text-align: center;
 	padding: 0;
 }
@@ -81,11 +85,6 @@ a {
 	margin: 0;
 	box-sizing: border-box;
 	border-radius: 20px;
-}
-
-#progressContainer {
-	padding: 2vw;
-	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .progressItem {
@@ -139,4 +138,27 @@ a {
 
 #paperFold {
 	background-color: #6f6;
+}
+
+#speedTimePassed {
+	background-color: #6f6;
+	color: #333;
+	padding: 0.5vw;
+	border-radius: 100vw;
+	position: sticky;
+	top: 0;
+	box-sizing: border-box;
+}
+
+.speedButWait {
+	font-style: italic;
+}
+
+.speedImg {
+	height: 30vh;
+}
+
+.speedDistance {
+	font-size: 3vw;
+	font-weight: bold;
 }
