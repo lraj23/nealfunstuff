@@ -4,6 +4,7 @@
 	--background: #ddd;
 	--background-darker: #bbb;
 	--foreground: #333;
+	--foreground-lighter: #444;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +12,7 @@
 		--background: #333;
 		--background-darker: #222;
 		--foreground: #ddd;
+		--foreground-lighter: #fff;
 	}
 }
 
@@ -55,8 +57,9 @@ a {
 #pages,
 #progressContainer,
 #paperContainer,
-#speedContainer {
-	padding: 2vw;
+#speedContainer,
+#checklistContainer {
+	padding: 0;
 	margin: 2vh 9.5vw 2vh 9.5vw;
 	box-sizing: border-box;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -64,9 +67,9 @@ a {
 
 #pages,
 #paperContainer,
-#speedContainer {
+#speedContainer,
+#checklistContainer {
 	text-align: center;
-	padding: 0;
 }
 
 .page {
@@ -161,4 +164,91 @@ a {
 .speedDistance {
 	font-size: 3vw;
 	font-weight: bold;
+}
+
+.checklistItem {
+	background-color: var(--background-darker);
+	border-radius: 100vw;
+	font-size: 2vw;
+	display: inline-block;
+	width: 25vw;
+	margin: 0.67vw;
+	overflow-y: hidden;
+	overflow-x: auto;
+	height: 3vw;
+	padding: 0.335vw;
+	box-sizing: border-box;
+	scrollbar-gutter: stable both-edges;
+}
+
+.checklistItem:has(.checklistCheck:checked) {
+	background-color: #6f6;
+	color: #333;
+}
+
+.checklistCheckContainer {
+	display: flex;
+	align-items: center;
+}
+
+.checklistCheck {
+	display: none;
+}
+
+.checklistCheckLabel {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding-left: 25px;
+	cursor: pointer;
+	width: calc(infinity * 1vw);
+	user-select: none;
+	white-space: nowrap;
+}
+
+.checklistCheckLabel::before {
+	content: "";
+	position: relative;
+	left: -0.5vw;
+	top: 1vw;
+	transform: translateY(-50%);
+	width: 2vw;
+	height: 2vw;
+	border: 1px solid black;
+	border-radius: 25%;
+	background-color: #eee;
+	font-size: calc(4vw / 3);
+	box-sizing: border-box;
+}
+
+.checklistItem:has(.checklistCheck:checked) .checklistCheckLabel::before {
+	content: "✔";
+	background-color: #070;
+	color: #eee;
+	line-height: 1.5em;
+}
+
+.checklistItem:has(.checklistCheck:not(:checked):disabled) .checklistCheckLabel::before {
+	background-color: var(--background-darker);
+}
+
+.checklistItem:has(.checklistCheck:checked:disabled) .checklistCheckLabel::before {
+	background-color: #454;
+}
+
+::-webkit-scrollbar {
+	background-color: #fffa;
+	border-radius: 100vw;
+	width: 0.9vw;
+	height: 0.9vh;
+	z-index: calc(infinity)
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #000a;
+	border-radius: 100vw;
 }
