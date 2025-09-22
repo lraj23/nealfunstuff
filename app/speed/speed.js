@@ -28,18 +28,10 @@ export default _ => {
 	});
 	return <>
 		<ReturnHome />
-		<SubAndTitle title="Speed">a tiny variation of <a href="https://neal.fun/speed/">neal.fun/speed/</a><br/>I stole his images again... well maybe one day I'll make a commit where the only changes are "found/created my OWN images"</SubAndTitle>
+		<SubAndTitle title="Speed">a tiny variation of <a href="https://neal.fun/speed/">neal.fun/speed/</a><br />I stole his images again... well maybe one day I'll make a commit where the only changes are "found/created my OWN images"</SubAndTitle>
 		<div id="speedContainer">
 			<p id="speedTimePassed">You opened this page {msToString(time - loadTime)} ago.</p>
-			<SpeedItem func={0} time={time - loadTime} />
-			<SpeedItem func={1} time={time - loadTime} />
-			<SpeedItem func={2} time={time - loadTime} />
-			<SpeedItem func={3} time={time - loadTime} />
-			<SpeedItem func={4} time={time - loadTime} />
-			<SpeedItem func={5} time={time - loadTime} />
-			<SpeedItem func={6} time={time - loadTime} />
-			<SpeedItem func={7} time={time - loadTime} />
-			<SpeedItem func={8} time={time - loadTime} />
+			{new Array(9).fill().map((_, i) => <SpeedItem func={i} time={time - loadTime} key={i} />)}
 		</div>
 	</>;
 }

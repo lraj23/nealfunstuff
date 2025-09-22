@@ -8,6 +8,6 @@ export default _ => <>
 	<ReturnHome />
 	<SubAndTitle title="Life Checklist">a tiny variation of <a href="https://neal.fun/life-checklist/">neal.fun/life-checklist/</a><br />I didn't steal his images! Wait... he didn't use any images on this page 😔... and I stole his text</SubAndTitle>
 	<div id="checklistContainer">
-		{new Array(66).fill(0).map((_, i) => <ChecklistItem func={i} key={i} />)}
+		{new Array(66).fill().map((_, i) => <ChecklistItem func={i} key={i} />)}
 	</div>
 </>;
